@@ -1,6 +1,5 @@
 # Import the module
 from colorama import Fore, Back
-from art import *
 import os
 import random
 import time
@@ -521,6 +520,12 @@ def find_winner(computer_choice, player_choice):
             print("It's a tie!")
             drawn_games += 1
             played_games += 1
+
+
+        os.system('clear')
+        player_choice_result = player_choice(user_name)
+        computer_choice_result = computer_choice()
+        find_winner(computer_choice_result, player_choice_result)
 
         if not input("play again? (y/n): ").lower()== "y":
             running = False
